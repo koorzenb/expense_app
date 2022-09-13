@@ -1,16 +1,5 @@
-# flutter_template
+# expense_app
 
-From parent folder, run "flutter create this_folderApp_name"
-
-Eg. if app is in
-
-```
-C:\workspace\my_app
-```
-
-then from C:\workspace run:
-
-```
-flutter create my_app
+App for tracking expendature
 ```
 
