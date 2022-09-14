@@ -32,6 +32,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // String titleInput;
+    // String amountInput;
+
+    final amountController = TextEditingController();
+    final titleController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter App'),
@@ -59,17 +65,22 @@ class MyHomePage extends StatelessWidget {
                     decoration: InputDecoration(
                       labelText: "Title",
                     ),
+                    controller: titleController,
                   ),
                   TextField(
                     decoration: InputDecoration(
                       labelText: "Amount",
                     ),
+                    controller: amountController,
                   ),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(titleController.text);
+                      print(amountController.text);
+                    },
                     textColor: Colors.purple,
                     child: (Text(
-                      "Add transaction",
+                      "Add transacti",
                     )),
                   ),
                 ],
