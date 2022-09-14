@@ -1,3 +1,4 @@
+import './user_transactions.dart';
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatelessWidget {
@@ -30,6 +31,7 @@ class NewTransaction extends StatelessWidget {
               onPressed: () {
                 print(titleController.text);
                 print(amountController.text);
+                UserTransactions.addNexTx();
               },
               textColor: Colors.purple,
               child: (Text(
