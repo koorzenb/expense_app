@@ -9,7 +9,7 @@ class ChartBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Column(
+    return Column(
       children: [
         FittedBox(child: Text('\$${spendingAmount.toStringAsFixed(0)}')),
         SizedBox(
