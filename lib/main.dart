@@ -14,17 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Expenses',
       theme: ThemeData(
-        fontFamily: 'Quicksand',
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.purple,
-        ).copyWith(secondary: Colors.amber),
-        textTheme: const TextTheme(
-            headline6: TextStyle(
-              fontFamily: 'Quicksand',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-            button: TextStyle(color: Colors.white)),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: 'OpenSans',
@@ -32,6 +21,18 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.purple,
+        ).copyWith(secondary: Colors.amber),
+        errorColor: Colors.red,
+        fontFamily: 'Quicksand',
+        textTheme: const TextTheme(
+            headline6: TextStyle(
+              fontFamily: 'Quicksand',
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+            button: TextStyle(color: Colors.white)),
       ),
       home: MyHomePage(),
     );
@@ -56,6 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
     setState(() {
       _userTransactions.add(newTx);
+    });
+  }
+
+  void _deleteTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((tx) => tx.id == id);
     });
   }
 
@@ -100,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Chart(_recentTransactions),
-            TransactionList(_userTransactions),
+            TransactionList(_userTransactions, _deleteTransaction),
           ],
         ),
       ),
