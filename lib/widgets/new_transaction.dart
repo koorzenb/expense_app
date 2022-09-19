@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+/// Logic for adding new transaction
+///
+/// some more text
 class NewTransaction extends StatefulWidget {
   final Function addTx;
 
